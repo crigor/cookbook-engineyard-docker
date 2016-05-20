@@ -10,9 +10,6 @@ describe 'main::default' do
       platform: 'gentoo', version: '2.1')
   end
 
-  it { expect(chef_run).to create_directory '/etc/portage/package.accept_keywords' }
-  it { expect(chef_run).to create_file '/etc/portage/package.accept_keywords/docker' }
-
   context 'in utility instances' do
     let :runner do
       ChefSpec::SoloRunner.new(cookbook_path: './berks-cookbooks',
@@ -23,8 +20,6 @@ describe 'main::default' do
     end 
     it 'installs docker' do
       expect(chef_run).to create_docker_installation_package('default')
-          .with_package_name('app-emulation/docker')
-          .with_package_version('1.9.0')
     end
   end
 
