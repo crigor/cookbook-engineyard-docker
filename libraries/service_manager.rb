@@ -5,6 +5,11 @@ module EngineyardDocker
     provides :docker_service_manager, platform: 'gentoo'
 
     action :start do
+      # The group method is defined here as a property already
+      declare_resource :group, 'docker' do
+        system true
+      end
+
       template "/etc/conf.d/#{docker_name}"  do
         source 'docker.confd.erb'
         variables config: new_resource,

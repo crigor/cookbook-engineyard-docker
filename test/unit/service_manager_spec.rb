@@ -15,6 +15,10 @@ describe 'main::service_manager' do
   end
 
   it do
+    expect(chef_run).to create_group('docker').with_system true
+  end
+
+  it do
     expect(chef_run).to start_service 'docker'
   end
 
