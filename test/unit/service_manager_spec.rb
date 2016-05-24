@@ -28,7 +28,8 @@ describe 'main::service_manager' do
 
   it do
     expect(chef_run).to create_template('/etc/init.d/docker')
-      .with_cookbook 'engineyard_docker'
+      .with_cookbook('engineyard_docker')
+      .with_mode('0755')
   end
 
   it do
