@@ -1,4 +1,4 @@
-docker_installation_package 'default' do
+docker_installation_binary 'default' do
   only_if { node['instance_role'] == 'util' && node['name'] == 'docker' }
 end
 
