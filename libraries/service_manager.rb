@@ -19,7 +19,7 @@ module EngineyardDocker
 
       template "/etc/init.d/#{docker_name}" do
         source 'docker.initd.erb'
-        variables daemon_arg: new_resource.docker_daemon_arg
+        variables daemon_arg: lazy { new_resource.docker_daemon_arg }
         cookbook 'engineyard_docker'
         mode '0755'
       end
