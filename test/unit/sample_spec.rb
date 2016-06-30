@@ -19,7 +19,7 @@ describe 'main::default' do
       end
     end 
     it 'installs docker' do
-      expect(chef_run).to create_docker_installation_package('default')
+      expect(chef_run).to create_docker_installation_package('app-emulation/docker')
     end
   end
 

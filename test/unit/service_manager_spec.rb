@@ -39,7 +39,7 @@ describe 'main::service_manager' do
 
   it do
     expect(chef_run).to render_file('/etc/conf.d/docker').with_content { |c|
-      expect(c).to match %r{^DOCKER_BINARY="/usr/bin/docker"}
+      expect(c).to match %r{^DOCKERD_BINARY="/usr/bin/dockerd"}
     }
   end
 
@@ -63,7 +63,7 @@ describe 'main::service_manager' do
 
   it do
     expect(chef_run).to render_file('/etc/init.d/docker').with_content { |c|
-      expect(c).to match %r{^command_args="-d}
+      expect(c).to match %r{^command_args="-p}
     }
   end
 end
