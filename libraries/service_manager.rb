@@ -36,6 +36,8 @@ module EngineyardDocker
       opts
     end
 
+    # FIXME Remove after upstream's merged
+    # https://github.com/chef-cookbooks/docker/pull/726
     def dockerd_bin
       '/usr/bin/dockerd'
     end
