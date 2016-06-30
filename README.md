@@ -58,7 +58,7 @@ end
 ### Example
 
 ```ruby
-docker_service_manager_execute 'default' do
+docker_service_manager_openrc 'default' do
   action :start
 end
 ```
