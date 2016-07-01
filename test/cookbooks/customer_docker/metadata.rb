@@ -1,4 +1,4 @@
-name 'main'
+name 'customer_docker'
 description 'Entry point for Engineyard\'s custom Chef cookbooks'
 
 maintainer 'Allan Espinosa'

@@ -1,4 +1,4 @@
 source 'https://supermarket.chef.io'
 
 metadata
-cookbook 'main', path: './test/cookbooks/main'
+cookbook 'customer_docker', path: './test/cookbooks/customer_docker'
